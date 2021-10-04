@@ -12,3 +12,10 @@ The robot will follow along the white line until the IR sensors detect an inters
 - Robot keeps turning until the white line lies between both the IR sensors (half of the trackwidth)
 - Servo turns right (0deg), both motors LOW, then both motor will be HIGH until the centre IR sensor is HIGH
 
+# Codes
+These are the following set of codes I need to write:
+1. Turning right and left and straight (function)
+2. Turning 90 deg according to the line detected
+3. Turning 180 deg for back at dead end 
+4. Storing the path in dry run
+5. Shortening the path using LSRB for actual run
