@@ -5,7 +5,7 @@
 */
 #include "IRreading.h"
 #include "directionControl.h"
-#include "dryRun.h"
+//#include "dryRun.h"
 
 
 /*Indicators*/
@@ -48,5 +48,7 @@ void setup() {
 
 // the loop function runs over and over again until power down or reset
 void loop() {
-	dryRun();
+	//dryRun();
+
+	availableDir();
 }

@@ -1,3 +1,4 @@
+#include "directionControl.h"
 #pragma once
 
 int Av = 1;
@@ -11,14 +12,14 @@ int backDir = 0;
 
 /*Reading IRs*/
 //IR Sensors
-int IR_L = 6; //Left
+/*int IR_L = 6; //Left
 int IR_CL = 7; //Centre left
 int IR_C = 8; //Centre
 int IR_CR = 11; //Centre right
 int IR_R = 12; //Right
 
 int A = 0;
-int NA = 1;
+int NA = 1;*/
 
 int L_line = digitalRead(IR_L);
 int R_line = digitalRead(IR_R);
@@ -29,16 +30,50 @@ int CR_read = digitalRead(IR_CR);
 
 void availableDir() {
 	if (L_line == A) {
+		turnLeft();
+
+
 		leftDir = Av;
+
+		rightDir == notAv;
+		straightDir == notAv;
+		backDir == notAv;
 	}
-	if (R_line == A) {
-		rightDir = Av;
-	}
-	if (C_line == A || CL_read == A || CR_read == A) {
+	else if (C_line == A || CL_read == A || CR_read == A) {
+		followLine();
+
+
 		straightDir = Av;
+
+		leftDir == notAv;
+		rightDir == notAv;
+		backDir == notAv;
 	}
-	if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
+	else if (R_line == A) {
+		turnRight();
+
+
+		rightDir = Av;
+
+		leftDir == notAv;
+		straightDir == notAv;
+		backDir == notAv;
+	}
+	else if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
+		uTurn();
+
+		
 		backDir = Av;
+
+		leftDir == notAv;
+		rightDir == notAv;
+		straightDir == notAv;
+	}
+	else {
+		leftDir == notAv;
+		rightDir == notAv;
+		straightDir == notAv;
+		backDir == notAv;
 	}
 }
 

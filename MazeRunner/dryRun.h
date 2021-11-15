@@ -1,10 +1,11 @@
 #include "IRreading.h"
-#include "directionControl.h"
+//#include "directionControl.h"
 
 #pragma once
 
 void dryRun() {
-	if (leftDir == Av) {
+	availableDir();
+	/*if (leftDir == Av) {
 		turnLeft();
 	}
 	else if (straightDir == Av) {
@@ -15,5 +16,5 @@ void dryRun() {
 	}
 	else if (backDir == Av) {
 		uTurn();
-	}
+	}*/
 }

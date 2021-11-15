@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C5F80730-F44F-4478-BDAE-6634EFC2CA88}</ProjectGuid>
+    <ProjectGuid>{7FA1A44A-F891-49C0-B230-3DF5A5EE199E}</ProjectGuid>
     <RootNamespace>MazeRunner</RootNamespace>
     <ProjectName>MazeRunner</ProjectName>
   </PropertyGroup>
