@@ -5,7 +5,7 @@
 
 void dryRun() {
 	availableDir();
-	/*if (leftDir == Av) {
+	if (leftDir == Av) {
 		turnLeft();
 	}
 	else if (straightDir == Av) {
@@ -16,5 +16,5 @@ void dryRun() {
 	}
 	else if (backDir == Av) {
 		uTurn();
-	}*/
+	}
 }
