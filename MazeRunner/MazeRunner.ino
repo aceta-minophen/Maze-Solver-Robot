@@ -50,5 +50,30 @@ void setup() {
 void loop() {
 	//dryRun();
 
-	availableDir();
+	//availableDir();
+	/*if (leftDir == Av) {
+		turnLeft();
+	}
+	else if (straightDir == Av) {
+		followLine();
+	}
+	else if (rightDir == Av) {
+		turnRight();
+	}
+	else if (backDir == Av) {
+		uTurn();
+	}*/
+
+	if (L_line == A) {
+		turnLeft();
+	}
+	else if (C_line == A || CL_read == A || CR_read == A) {
+		followLine();
+	}
+	else if (R_line == A) {
+		turnRight();
+	}
+	else if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
+		uTurn();
+	}
 }

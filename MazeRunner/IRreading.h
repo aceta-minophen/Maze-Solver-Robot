@@ -30,7 +30,7 @@ int CR_read = digitalRead(IR_CR);
 
 void availableDir() {
 	if (L_line == A) {
-		turnLeft();
+		//turnLeft();
 
 
 		leftDir = Av;
@@ -40,7 +40,7 @@ void availableDir() {
 		backDir == notAv;
 	}
 	else if (C_line == A || CL_read == A || CR_read == A) {
-		followLine();
+		//followLine();
 
 
 		straightDir = Av;
@@ -50,7 +50,7 @@ void availableDir() {
 		backDir == notAv;
 	}
 	else if (R_line == A) {
-		turnRight();
+		//turnRight();
 
 
 		rightDir = Av;
@@ -60,7 +60,7 @@ void availableDir() {
 		backDir == notAv;
 	}
 	else if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
-		uTurn();
+		//uTurn();
 
 		
 		backDir = Av;
@@ -75,5 +75,14 @@ void availableDir() {
 		straightDir == notAv;
 		backDir == notAv;
 	}
+
+	Serial.print("leftDir= ");
+	Serial.println(leftDir);
+	Serial.print("rightDir= ");
+	Serial.println(rightDir);
+	Serial.print("straightDir= ");
+	Serial.println(straightDir);
+	Serial.print("backDir= ");
+	Serial.println(backDir);
 }
 
