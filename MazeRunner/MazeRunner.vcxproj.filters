@@ -30,5 +30,8 @@
     <ClInclude Include="dryRun.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="savingDirections.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,18 +10,6 @@ int rightDir = 0;
 int backDir = 0;
 
 
-/*Reading IRs*/
-//IR Sensors
-/*int IR_L = 6; //Left
-int IR_CL = 7; //Centre left
-int IR_C = 8; //Centre
-int IR_CR = 11; //Centre right
-int IR_R = 12; //Right
-
-int A = 0;
-int NA = 1;*/
-
-
 void availableDir() {
 	int L_line = digitalRead(IR_L);
 	int R_line = digitalRead(IR_R);
