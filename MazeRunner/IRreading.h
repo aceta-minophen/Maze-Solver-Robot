@@ -19,7 +19,7 @@ void availableDir() {
 	int CL_read = digitalRead(IR_CL);
 	int CR_read = digitalRead(IR_CR);
 
-	if (L_line == A) {
+	if (L_line == A && C_line == A) {
 		leftDir = Av;
 
 		rightDir = notAv;
@@ -41,7 +41,7 @@ void availableDir() {
 		Serial.println(straightDir);*/
 		indicator = 0;
 	}
-	else if (R_line == A) {
+	else if (R_line == A && C_line == A) {
 		rightDir = Av;
 
 		leftDir = notAv;
@@ -72,5 +72,6 @@ void availableDir() {
 	Serial.println(rightDir);
 	Serial.print("backDir= ");
 	Serial.println(backDir);*/
+	digitalWrite(13, indicator);
 }
 
