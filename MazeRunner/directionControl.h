@@ -24,15 +24,22 @@ int NA = 1;
 int turnR = 0;
 int turnL = 0;
 int turnB = 0;
+int turnS = 0;
+
+int switchL = 0;
+int switchR = 0;
+int switchB = 0;
+int switchS = 0;
 
 
 /*Turning Left*/
 void turnLeft() {
 	analogWrite(speedR, 52);
 	analogWrite(speedL, 0);
-	Serial.print("Turning Left: ");
+	//Serial.print("Turning Left: ");
 	turnL = 1;
-	Serial.println(turnL);
+	//Serial.println(turnL);
+	switchL = 1;
 }
 
 
@@ -40,9 +47,10 @@ void turnLeft() {
 void turnRight() {
 	analogWrite(speedR, 0);
 	analogWrite(speedL, 57);
-	Serial.print("Turning right: ");
+	//Serial.print("Turning right: ");
 	turnR = 1;
-	Serial.println(turnR);
+	//Serial.println(turnR);
+	switchR = 1;
 }
 
 
@@ -50,19 +58,21 @@ void turnRight() {
 void nudgeLeft() {
 	analogWrite(speedR, 48);
 	analogWrite(speedL, 30);
-	Serial.print("Nudging Left");
+	//Serial.print("Nudging Left");
 }
 
 void nudgeRight() {
 	analogWrite(speedR, 30);
 	analogWrite(speedL, 48);
-	Serial.print("Nudging Right");
+	//Serial.print("Nudging Right");
 }
 
 void headStraight() {
 	analogWrite(speedR, 50);
 	analogWrite(speedL, 57);
-	Serial.println("Heading Straight");
+	//Serial.println("Heading Straight");
+	turnS = 1;
+	switchS = 1;
 }
 
 void followLine() {
@@ -87,9 +97,10 @@ void followLine() {
 void uTurn() {
 	analogWrite(speedL, 57);
 	analogWrite(speedR, 0);
-	Serial.print("U turn: ");
+	//Serial.print("U turn: ");
 	turnB = 1;
-	Serial.println(turnB);
+	//Serial.println(turnB);
+	switchB = 1;
 }
 
 
@@ -97,5 +108,5 @@ void uTurn() {
 void stopMoving() {
 	analogWrite(speedR, 0);
 	analogWrite(speedL, 0);
-	Serial.println("Stopped moving");
+	//Serial.println("Stopped moving");
 }

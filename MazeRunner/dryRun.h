@@ -1,5 +1,5 @@
 #include "IRreading.h"
-
+#include "savingDirections.h"
 #pragma once
 
 void dryRun() {
@@ -16,4 +16,6 @@ void dryRun() {
 	else if (backDir == Av) {
 		uTurn();
 	}
+
+	intersectionDetector();
 }

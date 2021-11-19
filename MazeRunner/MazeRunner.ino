@@ -10,7 +10,7 @@
 
 /*Indicators*/
 int LED = 13;
-int indicator = 0;
+//int indicator = 0;
 
 
 

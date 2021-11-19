@@ -9,6 +9,7 @@ int straightDir = 0;
 int rightDir = 0;
 int backDir = 0;
 
+int indicator = 0;
 
 void availableDir() {
 	int L_line = digitalRead(IR_L);
@@ -19,57 +20,57 @@ void availableDir() {
 	int CR_read = digitalRead(IR_CR);
 
 	if (L_line == A) {
-		//turnLeft();
 		leftDir = Av;
 
-		rightDir == notAv;
-		straightDir == notAv;
-		backDir == notAv;
+		rightDir = notAv;
+		straightDir = notAv;
+		backDir = notAv;
 
-		Serial.print("leftDir= ");
-		Serial.println(leftDir);
+		/*Serial.print("leftDir= ");
+		Serial.println(leftDir);*/
+		indicator = 1;
 	}
 	else if (C_line == A || CL_read == A || CR_read == A) {
-		//followLine();
-
-
 		straightDir = Av;
 
-		leftDir == notAv;
-		rightDir == notAv;
-		backDir == notAv;
+		leftDir = notAv;
+		rightDir = notAv;
+		backDir = notAv;
 
-		Serial.print("straightDir= ");
-		Serial.println(straightDir);
+		/*Serial.print("straightDir= ");
+		Serial.println(straightDir);*/
+		indicator = 0;
 	}
 	else if (R_line == A) {
-		//turnRight();
-
-
 		rightDir = Av;
 
-		leftDir == notAv;
-		straightDir == notAv;
-		backDir == notAv;
+		leftDir = notAv;
+		straightDir = notAv;
+		backDir = notAv;
 
-		Serial.print("rightDir= ");
-		Serial.println(rightDir);
+		/*Serial.print("rightDir= ");
+		Serial.println(rightDir);*/
+		indicator = 1;
 	}
 	else if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
-		//uTurn();
-
-		
 		backDir = Av;
 
-		leftDir == notAv;
-		rightDir == notAv;
-		straightDir == notAv;
+		leftDir = notAv;
+		rightDir = notAv;
+		straightDir = notAv;
 
-		Serial.print("backDir= ");
-		Serial.println(backDir);
+		/*Serial.print("backDir= ");
+		Serial.println(backDir);*/
+		indicator = 1;
 	}
-
 	
-	
+	/*Serial.print("leftDir= ");
+	Serial.println(leftDir);
+	Serial.print("straightDir= ");
+	Serial.println(straightDir);
+	Serial.print("rightDir= ");
+	Serial.println(rightDir);
+	Serial.print("backDir= ");
+	Serial.println(backDir);*/
 }
 
