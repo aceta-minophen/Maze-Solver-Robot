@@ -4,6 +4,7 @@
 
 void dryRun() {
 	availableDir();
+
 	if (leftDir == Av) {
 		turnLeft();
 	}
