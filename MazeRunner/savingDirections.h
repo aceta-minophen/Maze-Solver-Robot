@@ -26,6 +26,13 @@ void intersectionDetector() {
 		Serial.println(intDet); WHAT DO I DOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 		switchS = 0;
 	}*/
+	while(indicator==0){
+		if(turnR != 1 && switchR == 1){
+			intDet = 's';
+			Serial.println(intDet);
+			switchR = 0;
+		}
+	}
 	else if (turnR != 1 && switchR == 1) {
 		//Serial.println("B");
 		intDet = 'r';
