@@ -10,6 +10,7 @@ int rightDir = 0;
 int backDir = 0;
 
 int indicator = 0;
+char dir;
 
 void availableDir() {
 	int L_line = digitalRead(IR_L);
@@ -28,6 +29,8 @@ void availableDir() {
 
 		/*Serial.print("leftDir= ");
 		Serial.println(leftDir);*/
+		//indicator = 1;
+		//dir = 'l';
 	}
 	else if (C_line == A || CL_read == A || CR_read == A) {
 		straightDir = Av;
@@ -38,6 +41,8 @@ void availableDir() {
 
 		/*Serial.print("straightDir= ");
 		Serial.println(straightDir);*/
+		//indicator = 0;
+		//dir = 's';
 	}
 	else if (R_line == A) {
 		rightDir = Av;
@@ -48,6 +53,8 @@ void availableDir() {
 
 		/*Serial.print("rightDir= ");
 		Serial.println(rightDir);*/
+		//indicator = 1;
+		//dir = 'r';
 	}
 	else if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
 		backDir = Av;
@@ -58,6 +65,8 @@ void availableDir() {
 
 		/*Serial.print("backDir= ");
 		Serial.println(backDir);*/
+		//indicator = 1;
+		//dir = 'b';
 	}
 	
 	/*Serial.print("leftDir= ");
