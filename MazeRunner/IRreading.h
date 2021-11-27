@@ -10,9 +10,13 @@ int rightDir = 0;
 int backDir = 0;
 
 int indicator = 0;
-char dir;
+int switchX = 0;
+
+char intDet;
+
 
 void availableDir() {
+
 	int L_line = digitalRead(IR_L);
 	int R_line = digitalRead(IR_R);
 	int C_line = digitalRead(IR_C);
@@ -26,11 +30,6 @@ void availableDir() {
 		rightDir = notAv;
 		straightDir = notAv;
 		backDir = notAv;
-
-		/*Serial.print("leftDir= ");
-		Serial.println(leftDir);*/
-		//indicator = 1;
-		//dir = 'l';
 	}
 	else if (C_line == A || CL_read == A || CR_read == A) {
 		straightDir = Av;
@@ -38,11 +37,6 @@ void availableDir() {
 		leftDir = notAv;
 		rightDir = notAv;
 		backDir = notAv;
-
-		/*Serial.print("straightDir= ");
-		Serial.println(straightDir);*/
-		//indicator = 0;
-		//dir = 's';
 	}
 	else if (R_line == A) {
 		rightDir = Av;
@@ -50,11 +44,6 @@ void availableDir() {
 		leftDir = notAv;
 		straightDir = notAv;
 		backDir = notAv;
-
-		/*Serial.print("rightDir= ");
-		Serial.println(rightDir);*/
-		//indicator = 1;
-		//dir = 'r';
 	}
 	else if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
 		backDir = Av;
@@ -62,22 +51,7 @@ void availableDir() {
 		leftDir = notAv;
 		rightDir = notAv;
 		straightDir = notAv;
-
-		/*Serial.print("backDir= ");
-		Serial.println(backDir);*/
-		//indicator = 1;
-		//dir = 'b';
 	}
-	
-	/*Serial.print("leftDir= ");
-	Serial.println(leftDir);
-	Serial.print("straightDir= ");
-	Serial.println(straightDir);
-	Serial.print("rightDir= ");
-	Serial.println(rightDir);
-	Serial.print("backDir= ");
-	Serial.println(backDir);*/
-	
 
 	/*Indicator*/
 	if (L_line == A) {
@@ -89,12 +63,19 @@ void availableDir() {
 	if (C_line == A && L_line == A) {
 		indicator = 1;
 	}
-	if (C_line == A && R_line == A) {
+	if (C_line == A && R_line == A && switchX == 0) {
 		indicator = 1;
+		switchX = 1;
+	}
+	if (C_line == A && R_line == NA && switchX == 1) {
+		intDet = 's';
+		Serial.println(intDet);
+		switchX = 0;
 	}
 	if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {
 		indicator = 1;
 	}
+		
 
 	digitalWrite(13, indicator);
 }
