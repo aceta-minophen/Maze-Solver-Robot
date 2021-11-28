@@ -14,6 +14,8 @@ int switchX = 0;
 
 char intDet;
 
+int count = 0;
+char mazeMap[100];
 
 void availableDir() {
 
@@ -63,13 +65,22 @@ void availableDir() {
 	if (C_line == A && L_line == A) {
 		indicator = 1;
 	}
-	if (C_line == A && R_line == A && switchX == 0) {
+	if (C_line == A && R_line == A) {
 		indicator = 1;
 		switchX = 1;
 	}
 	if (C_line == A && R_line == NA && switchX == 1) {
 		intDet = 's';
-		Serial.println(intDet);
+		//Serial.println(intDet);
+
+		count = count + 1;
+		//Serial.println(count);
+
+		mazeMap[count] = intDet;
+		Serial.print("'");
+		Serial.print(mazeMap[count]);
+		Serial.print("'");
+		Serial.print(", ");
 		switchX = 0;
 	}
 	if (CR_read == NA && CL_read == NA && R_line == NA && L_line == NA && C_line == NA) {

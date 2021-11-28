@@ -2,13 +2,13 @@
 #pragma once
 
 /*Motor Driver*/
-int motorLpin1 = 2;
-int motorLpin2 = 3;
-int motorRpin1 = 4;
-int motorRpin2 = 5;
+int motorLpin1 = 4;
+int motorLpin2 = 5;
+int motorRpin1 = 2;
+int motorRpin2 = 3;
 
-int speedL = 9;
-int speedR = 10;
+int speedL = 10;
+int speedR = 9;
 
 /*Reading IRs*/
 //IR Sensors
@@ -34,7 +34,7 @@ int switchS = 0;
 
 /*Turning Left*/
 void turnLeft() {
-	analogWrite(speedR, 52);
+	analogWrite(speedR, 50);
 	analogWrite(speedL, 0);
 	//Serial.print("Turning Left: ");
 	turnL = 1;
@@ -46,7 +46,7 @@ void turnLeft() {
 /*Turning Right*/
 void turnRight() {
 	analogWrite(speedR, 0);
-	analogWrite(speedL, 57);
+	analogWrite(speedL, 50);
 	//Serial.print("Turning right: ");
 	turnR = 1;
 	//Serial.println(turnR);
@@ -68,8 +68,8 @@ void nudgeRight() {
 }
 
 void headStraight() {
-	analogWrite(speedR, 50);
-	analogWrite(speedL, 57);
+	analogWrite(speedR, 47);
+	analogWrite(speedL, 46);
 	//Serial.println("Heading Straight");
 	turnS = 1;
 	switchS = 1;
@@ -85,17 +85,17 @@ void followLine() {
 		headStraight();
 	}
 	else if (CL_read == A && CR_read == NA && C_read == NA) {
-		nudgeLeft();
+		turnLeft();
 	}
 	else if (CL_read == NA && CR_read == A && C_read == NA) {
-		nudgeRight();
+		turnRight();
 	}
 }
 
 
 /*Turning Back (u-turn)*/
 void uTurn() {
-	analogWrite(speedL, 57);
+	analogWrite(speedL, 50);
 	analogWrite(speedR, 0);
 	//Serial.print("U turn: ");
 	turnB = 1;

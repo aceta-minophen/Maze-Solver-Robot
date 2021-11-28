@@ -2,6 +2,7 @@
 #include "savingDirections.h"
 #pragma once
 
+
 void dryRun() {
 	availableDir();
 
@@ -15,8 +16,16 @@ void dryRun() {
 		turnRight();
 	}
 	else if (backDir == Av) {
-		uTurn();
+		stopMoving();
 	}
 
 	intersectionDetector();
+
+	/*for (int i = 0; i < 50; i++) {
+		mazeMap[count] = intDet;
+		Serial.print("'");
+		Serial.print(mazeMap[count]);
+		Serial.print("'");
+		Serial.print(", ");
+	}*/
 }

@@ -28,8 +28,8 @@ void setup() {
 	pinMode(speedR, OUTPUT);
 
 	//anticlockwise
-	digitalWrite(motorLpin1, LOW); //left
-	digitalWrite(motorLpin2, HIGH); // left
+	digitalWrite(motorLpin1, HIGH); //left
+	digitalWrite(motorLpin2, LOW); // left
 	digitalWrite(motorRpin1, HIGH); //right
 	digitalWrite(motorRpin2, LOW); //right
 
