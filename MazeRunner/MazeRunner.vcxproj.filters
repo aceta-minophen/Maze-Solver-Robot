@@ -21,5 +21,17 @@
     <ClInclude Include="__vm\.MazeRunner.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="directionControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IRreading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dryRun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="savingDirections.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
