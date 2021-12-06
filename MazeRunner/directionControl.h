@@ -34,7 +34,7 @@ int switchS = 0;
 
 /*Turning Left*/
 void turnLeft() {
-	analogWrite(speedR, 50);
+	analogWrite(speedR, 70);
 	analogWrite(speedL, 0);
 	//Serial.print("Turning Left: ");
 	turnL = 1;
@@ -46,7 +46,7 @@ void turnLeft() {
 /*Turning Right*/
 void turnRight() {
 	analogWrite(speedR, 0);
-	analogWrite(speedL, 50);
+	analogWrite(speedL, 70);
 	//Serial.print("Turning right: ");
 	turnR = 1;
 	//Serial.println(turnR);
@@ -56,20 +56,20 @@ void turnRight() {
 
 /*Nudging to not stray from path*/
 void nudgeLeft() {
-	analogWrite(speedR, 48);
-	analogWrite(speedL, 30);
+	analogWrite(speedR, 58);
+	analogWrite(speedL, 0);
 	//Serial.print("Nudging Left");
 }
 
 void nudgeRight() {
-	analogWrite(speedR, 30);
-	analogWrite(speedL, 48);
+	analogWrite(speedR, 0);
+	analogWrite(speedL, 58);
 	//Serial.print("Nudging Right");
 }
 
 void headStraight() {
-	analogWrite(speedR, 55);
-	analogWrite(speedL, 55);
+	analogWrite(speedR, 56);
+	analogWrite(speedL, 56);
 	//Serial.println("Heading Straight");
 	turnS = 1;
 	switchS = 1;
@@ -85,10 +85,10 @@ void followLine() {
 		headStraight();
 	}
 	else if (CL_read == A && CR_read == NA && C_read == NA) {
-		turnLeft();
+		nudgeLeft();
 	}
 	else if (CL_read == NA && CR_read == A && C_read == NA) {
-		turnRight();
+		nudgeRight();
 	}
 }
 
