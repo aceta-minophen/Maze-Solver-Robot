@@ -68,8 +68,8 @@ void nudgeRight() {
 }
 
 void headStraight() {
-	analogWrite(speedR, 47);
-	analogWrite(speedL, 46);
+	analogWrite(speedR, 55);
+	analogWrite(speedL, 55);
 	//Serial.println("Heading Straight");
 	turnS = 1;
 	switchS = 1;
